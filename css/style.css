@@ -1,0 +1,254 @@
+body {
+  font-family: 'BenchNine', sans-serif;
+}
+
+/**
+ * HEADER
+ */
+.site-header {
+  z-index: 2;
+  position: fixed;
+  top: 0;
+  left: 0;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+              -ms-grid-row-align: center;
+          align-items: center;
+  width: 100%;
+  background-color: #fff;
+  height: 80px;
+  padding: 20px 0;
+  box-sizing: border-box;
+}
+
+.site-header__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100%;
+}
+.site-header__container--left {}
+.site-header__container--right {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-left: auto;
+}
+
+/* menu */
+.site-header__menu-button {
+  background-color: #231f20;
+  display: inline-block;
+  width: 25px;
+  height: 2px;
+  margin: 7px 66px 7px 0;
+  position: relative;
+}
+
+.site-header__menu-button::before,
+.site-header__menu-button::after {
+  content: '';
+  background-color: #231f20;
+  display: block;
+  width: 25px;
+  height: 2px;
+  position: absolute;
+}
+
+.site-header__menu-button::before {
+  top: -7px;
+}
+
+.site-header__menu-button::after {
+  bottom: -7px;
+}
+
+/* logo */
+.site-header__logo {}
+
+/* phone */
+.site-header__phone {
+  background-color: #ffd200;
+  border-radius: 5px;
+  padding: 0 34px;
+  line-height: 38px;
+  display: inline-block;
+}
+
+/* logout */
+.site-header__logout {
+  display: inline-block;
+  width: 33px;
+  height: 29px;
+  background-image: url('/img/quit.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  overflow: hidden;
+  text-indent: -100%;
+  margin-left: 56px;
+}
+
+/**
+ * SECTIONS
+ */
+.site-section {
+  width: 100%;
+  text-align: center;
+  box-sizing: border-box;
+  padding: 3rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.site-section__heading,
+.site-section__phrase {
+  text-shadow: 0 0 2px rgba(0,0,0,0.4);
+  font-family: 'BenchNine', sans-serif;
+  font-weight: 200;
+  margin: 0;
+}
+
+.site-section__heading {
+  font-size: 4rem;
+}
+
+.site-section__phrase {
+  font-size: 1.875rem;;
+  margin-bottom: 70px;
+}
+
+
+/* welcome section */
+.site-section__welcome {
+  min-height: calc(100vh - 80px);
+  position: relative;
+  margin-top: 80px;
+}
+
+.site-section__welcome__bg {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('/img/bg/01.jpeg');
+  background-position: center;
+  background-size: cover;
+  z-index: -1;
+  -webkit-filter: blur(3px);
+          filter: blur(3px);
+}
+
+/* services section */
+.site-section__services {
+  background-color: #fff;
+}
+
+.site-section__services__container {
+  position: relative;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+}
+
+.site-section__services__dashed {
+  position: absolute;
+  width: 70%;
+  left: 20%;
+  height: 1px;
+  border-top: 3px dashed #fcd40a;
+  top: 65px;
+  z-index: 0;
+}
+
+.site-section__services__item {
+  z-index: 1;
+  flex: 1;
+}
+
+.site-section__services__icon {
+  width: 130px;
+  height: 130px;
+  border: 3px solid #fcd40a;
+  display: inline-block;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 100%;
+  flex: 1;
+  background-color: #fff;
+}
+
+.site-section__services__icon--cloud {
+  background-image: url('/img/cloud.png');
+}
+
+.site-section__services__icon--hand {
+  background-image: url('/img/hand.png');
+}
+
+.site-section__services__icon--computer {
+  background-image: url('/img/computer.png');
+}
+
+.site-section__services__icon--car {
+  background-image: url('/img/car.png');
+}
+
+.site-section__services__description {
+  letter-spacing: 1px;
+  font-size: 1.5rem;
+  margin: 0;
+  line-height: 2rem;
+}
+
+
+@media screen and (max-width: 670px) {
+  .site-section__services__container {
+    flex-direction: column;
+  }
+
+  .site-section__services__item:not(:last-child) {
+    margin-bottom: 3rem;
+  }
+}
+
+/**
+ * UTILS
+ */
+.util-container {
+   width: 100%;
+   max-width: 1200px;
+   margin: 0 auto;
+   padding: 0 1rem;
+   box-sizing: border-box;
+}
+
+.util-button {
+  line-height: 65px;
+  padding: 0 38px;
+  border: 1px solid #010101;
+  border-radius: 5px;
+  text-transform: uppercase;
+  color: #010101;
+  font-family: 'BenchNine', sans-serif;
+  letter-spacing: 2px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+/* breakpoints */
+@media screen and (max-width: 670px) {
+  .util-desktop-only {
+    display: none;
+  }
+}
